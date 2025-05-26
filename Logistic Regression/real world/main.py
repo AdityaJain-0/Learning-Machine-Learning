@@ -1,7 +1,7 @@
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from model import LogisticRegression
 import numpy as np
 
@@ -24,3 +24,11 @@ model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 accuracy = accuracy_score(y_test, predictions)
 print(f"Accuracy on breast cancer dataset: {accuracy:.4f}")
+
+# Classification report
+print("\nClassification Report:")
+print(classification_report(y_test, predictions, target_names=data.target_names))
+
+# Confusion matrix
+print("\nConfusion Matrix:")
+print(confusion_matrix(y_test, predictions))
