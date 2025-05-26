@@ -30,3 +30,14 @@ Unlike linear regression, logistic regression is all about binary classification
 
             Lets say z = w1x1 + b --> during the optimization step we would take the partial derivative of the loss fucntion in regards to w1 and then in regards to b 
 
+    What is standerdization?
+
+        Standerdization is used to combat feature scale. For example, features such as age or income may have a much greater range then something like height. For models that use multiple features, features that have greater scale hold more weight in the gradient without standerdization, this leads to these features being more dominate --> Model may struggle to converge or converge very slowly --> Gradient becomes unstable/inefficent
+
+        X(scaled) = (x - u) / of
+
+        u = mean
+        o = standered deviation 
+
+        When you standerdize, you make it so that the feature x has a mean of 0 and a deviation of 1
+
