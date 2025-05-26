@@ -40,3 +40,7 @@ Classification Report
     Weighted Average
 
         Average, weighted by number of instances in each class → More realistic for imbalanced data
+
+    Score
+
+        For classification models its the same as accuracy, for regression models it gives coefficient of determination
