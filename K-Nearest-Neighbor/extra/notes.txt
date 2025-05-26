@@ -1,0 +1,18 @@
+K-Nearest Neighbor (KNN) is an odd machine learning model b/c it does not train a model but instead memorizes training data. It dosen't have some fixed form like linear or logistic but predicts based on closeness to other feature points.
+
+How it works (classification):
+
+    1. Measure the distance to all training points
+    2. Find the k nearest neighbors
+    3. Count how many of them belong to each class(1/0)
+    4. Assign the majority class to your point
+
+    Distance from other data points can measured several ways (Euclidean, Manhatten, Cosine similarity --> for high-dimensional vectors). For KNN feature scaleing is crucial as some features can completly overshadow the whole model. 
+
+    
+    Euclidean = d(x, x') = sqrt(summation{n, i = 1} (x - x')^2 )
+    
+    Small K = Overfitting
+    Big K = Underfitting 
+
+    K is the number of closest points you check 
