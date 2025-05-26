@@ -1,0 +1,59 @@
+X = House Sizes
+Y = House Prices
+
+Assuming there is a linear relationship between the two (both grow/decrease at a constant rate) we can apply linear regression to find a line of best fit for this linear model 
+
+    y(hat) = w1 * x(hat) + w0
+
+        y(hat) = house price 
+        x(hat) = house size 
+        w1 = slope (weight)
+        w0 = y-intercept (bias)
+
+How to find w0 and w1: 
+
+    We need the combination of w1 and w0 that minimize sum of squared error (SSE)
+
+    SSE = summation{n, i = 1} (y - y(hat))^2
+        = summation{n, i = 1} (y - (w1 * x + w0))^2
+
+        n = number of data points
+        y = actual price
+        x = house size
+
+    Solution (Normal Equation)
+
+        w1 = Summation (x - x(bar)) (y - y(bar)) / 
+             Summation (x - x(bar))^2
+
+                x(bar) = mean of x (house size)
+                y(bar) = mean of y (pouse price)
+    
+    With this the SSE finds the total error across all predictions by taking the average of this you get the mean squared error (MSE) we use the MSE b/c is behaves the same as the SSE in optimization and give us a per-example cost 
+
+        J(w0, w1) = MSE = 1/n * SSE
+
+            * Independent of dataset size 
+
+    Next, by taking the partial derivative in terms of w0 and then w1 we can get the gradient for each 
+
+        derivative J / derivative w1 = 
+        (-2/n) Summation{n, i = 1} (x (y - y(hat)))
+
+        derivative J / derivative w0 =
+        (-2/n) Summation{n, i = 1} (y - y(hat))
+
+    Then we repeate the following until the gradients are close to 0
+
+        w1 = w1 - a * (derivative J / derivative w1)
+        w0 = w0 - a * (derivative J / derivative w0)
+
+            a = learning rate (alpha)
+
+                The learning rate is a hyperparameter (you set it) generally it's a small value such as 0.01 or 0.001
+
+                Smaller values if training is unstable or diverging
+
+                Larger values if training is slow or flat
+
+                You want to slowly approach the relative minimum so that you don't overshoot but not so slowly that training takes to long
