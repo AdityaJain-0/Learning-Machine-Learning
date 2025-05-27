@@ -44,3 +44,10 @@ Classification Report
     Score
 
         For classification models its the same as accuracy, for regression models it gives coefficient of determination
+
+    Feature Importance
+
+        Is a normalizeds score (between 0 and 1) and indicated how much a feature contributed to reducing impurity
+
+            Higher number = higher Importance
+            All importances add up to 1
