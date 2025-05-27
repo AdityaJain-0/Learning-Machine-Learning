@@ -1,6 +1,0 @@
-Feature                 Bagging                 Boosting 
-Model Strategy      Parallel Models       Sequential Models
-Focus               Reduce variance       Reduce bias 
-Trees               Fully grown         Shallow (low depth)
-Combination         Average/vote          Weighted sum
-Overfitting Risk    lowering              HIgh (controlled)
