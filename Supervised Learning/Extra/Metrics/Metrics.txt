@@ -1,0 +1,67 @@
+There are a lot of diffrent metrics that we can use to undestand how well our model is performing and what we need to change, here are some of them:
+
+Accuarcy
+
+    Accuarcy compares the the predicted data to a known set, basicly compares y_test to y_predicted to see how well it did. This metric, while easy to use and understand, can be a bit deceptive. Imagine a classification dataset, where, due to randomness, only five percent of the testing data should evaluate to 0, but, you model guesses 1 for everything, giving it a 95% accuarcy rate. This could be disasterous in something like the medical field and therefor we have other metrics.
+
+Confusion Matrix
+
+    Shows the number of False-Positive, False-Negative, True-1, True-Negative:
+
+    Case Evaluated 1    #TP      #FP
+    Case Evaluated 0    #FN      #TN  
+    
+    A 100% accurate system will only display number in the TP and TN sections, the FP and FN data is what the model got wrong, this shows what type of evaluation your model is having trouble with and how much trouble it is having with that
+
+Classification Report 
+
+    Precision -> Of the number of cases gueses TP how many of them were actully TP (how trust worthy are the models 1 predictions) --> How many of the cases that we evaluated were 1 were actully 1
+
+            Precision = #TP / (#TP + #FP)
+
+    Recall -> Of actual 1, how many were actualy 1 --> Of all the training data that is 1 how much of that did we catch as 1 
+
+        Recall = #TP / (#TP + #FN)
+
+    F1 Score
+
+        Balence between precision and recall 
+
+        F1 Score = 2 * (Precision * Recall) / (Precision + Recall)
+
+    Support
+
+        How many of the testing data cases were actully 1 --> Tells you what your testing data set was made up of
+
+    Macro Average
+
+        Average across classes (equal weight) → Good for class balance evaluation
+
+    Weighted Average
+
+        Average, weighted by number of instances in each class → More realistic for imbalanced data
+
+Score
+
+    For classification models its the same as accuracy, for regression models it gives coefficient of determination
+
+Feature Importance
+
+    Is a normalizeds score (between 0 and 1) and indicated how much a feature contributed to reducing impurity
+
+        Higher number = higher Importance
+        All importances add up to 1
+
+ROC Curve and AUC Score 
+
+    Reciever Operating Characteristic 
+        Plots True Positive Rate (Recall) vs False Postive Rate --> Closer the curve is to the top-left, the better 
+
+    Area Under Curve 
+        AUC = 1.0 --> Perfect
+        AUC = 0.5 --> Random guessing 
+
+Precision Recall Curve 
+
+    Useful when classes are unbalenced --> focuses on trade-off between Precision and Recall 
+

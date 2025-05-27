@@ -1,0 +1,35 @@
+Random Forests are an ensemble method that work by combining many Decision Trees --> Reducing overfitting and improving accuracy 
+
+    * Part of a technique known as Bagging (Bootstrap Aggregating)
+    * Mostly for classification and regression 
+
+    Decision trees are prone to overfitting especially with noisy data --> Build many trees and average there predictions (for regression) or vote (for classification)
+
+        * Lower variance
+        * More stable prediction
+        * Better generalization
+        * Handle non-linear relationships
+        * Handle missing data, catagorical data, and large feature sets 
+
+How to forest is built:
+
+    Bootstrap Sampling
+
+        Random sample subsets of the training data for each tree --> Each tree sees slightly diffrent dataset
+
+    Feature Sampling
+
+        When splitting a node, each tree only considers a random subset of features, not all of them --> de-correlate trees, increase diversity 
+
+    Train many trees
+
+        Each tree learns on its own and then joins the forest 
+
+    Aggregate Predictions 
+
+        Classification: Majority vote from trees 
+        Regression: Average predication of all trees 
+
+Feature Importance Score
+
+    Shows which var is most helpful for making predictions 

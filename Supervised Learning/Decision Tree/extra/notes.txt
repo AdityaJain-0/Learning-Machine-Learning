@@ -1,0 +1,30 @@
+Decision tree is kind of like the trees data structure, at least in the way it flows.
+
+Parts of a decision tree:
+
+    Internal Nodes --> Tests on a feature
+    Branches --> Represents the outcomes of the test
+    Leaves --> Represent final predictions (class labels or values)
+
+    The tree splits the data into subsets based on feature values to reduce uncertainty, the goal is to train a tree to find splits that create the purest child nodes (i.e., mostly one class).
+
+    Each split in the tree is evaluated based on certain criteria
+
+        Gini Impurity (COmmon for classification)
+
+            Gini = 1 - summation{c, i = 1} (p^2)
+
+                P = proportion of class i in the node
+                lower Gini = lower imputiy = purer node
+
+        Entropy 
+
+            Entropy = -1 * summation{c, i = 1} (p * log{base 2}(p))
+
+                Like Gini, but logarithmic, high entropy = high impurity
+
+        Information Gain
+
+            IG = Entropy(parent) - summation ((n_child / n_total) * Entropy(child))
+
+            
