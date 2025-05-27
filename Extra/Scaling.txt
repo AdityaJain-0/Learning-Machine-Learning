@@ -1,0 +1,9 @@
+Scaling takes features of diffrent magnitudes and removes the influence of scale from them. This means that features that have a much larger range such as age or income wont dominate the gradient/model in the face of features that have les scale.
+
+Scaling is important for algorithms that use distance/angles between data points and/or are sensitive to feature magnitudes 
+
+Important: K-Nearest Neighbor, Support Vector Machine, Logistic Regression, Principle Component Analysis, Gradient based models, Neural Networks
+
+Not Needed: Decision Trees, Random Forests, XGBoost/LightGBM, Naive Bayes
+
+ALWAYS SPLIT THE DATA FIRST AND THEN PLY PREPROCESSING
