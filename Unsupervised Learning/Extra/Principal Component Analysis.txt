@@ -1,0 +1,12 @@
+Principle Component Analysis is a dimensionality reduction technique. It transforms data into a new coordinate system:
+
+    First Principle Component (PC1): Captures the most varience in the data
+
+    Second Principle Component (PC2): Captures the most remaining varience, orthogonal to the first 
+
+    Repeat --> End up with a new set of features (principle components) that are linear combinations of the orginal ones 
+
+Lets you reduce high dimensionality into 2-3 dimensions so that it can be visualized (without losing much info) --> Can remove less informative dimensions (low varience) helping model to focus on key patterns --> Can speed up learning of high dimension models 
+
+
+
