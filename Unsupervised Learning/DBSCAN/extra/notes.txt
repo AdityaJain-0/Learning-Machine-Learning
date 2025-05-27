@@ -1,0 +1,22 @@
+Density-Based Spatial Clustering of Applications with Noise also known as DBSCAN discovers clusters of arbitrary shape based on density --> Automatically detects outliers
+
+eps (E): Maximum distance between two samples to be considered in the smae neighborhood 
+
+min_sample: Minimum number of samp-les required to form a dense region 
+
+How it works:
+
+    Core pointL Has at least min_samples points within eps radius 
+
+    Border point: Within eps of core point but not core point
+
+    Noise point: Not close enough to any core points 
+
+Advantages
+    * No need to specifiy number of clusters 
+    * Can find arbitrarily shaped clusters 
+    * Detects outliers naturally 
+
+Disadvantages 
+    * Sensitive to eps and min_samples 
+    * Not ideal for datasets with varying densities 
