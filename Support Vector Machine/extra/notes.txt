@@ -6,7 +6,7 @@ How it works?
 
     The closest points are called support vectors --> They define the boundary 
 
-        Support vectors are found by finding points that lie on (usually)
+        Support vectors are found by finding points that lie on (usually) --> Known as the margin
         
             w * x + b = +/- 1
 
