@@ -1,0 +1,28 @@
+Heiarchical Clustering builds a tree (dendogram) of nested clusters:
+    * Start with each data point as its own cluster 
+    * Iteritavly merge the closest pairs of clusteres 
+    * Continue until all data is in one big cluster 
+
+Types
+
+    Agglomerative (bottom-up) --> Most common
+        1. Each data point is its own cluster
+        2. Calculate euiclidean distance betwen all clusters
+        3. Merge the 3 closest clusters
+        4. Repeat until all points are in one cluster 
+    Divisive (top-down) --> Less used 
+
+Linkage Methods (How distance between clusters is calculated)
+    * Single Linkage - Closest points
+    * Complete Linkage - Farthest points 
+    * Average Linkage - Average pairwise distance
+    * Ward's Method - Minimizes the total with-in cluster varience (common) 
+
+Dendogram --> Tree Diagram 
+    * Y-axis = distance between merged clusters 
+    * Can "cut" dendogram height to get desired num of clusters
+
+Advantages
+    * NO need to predefine number of clusters 
+    * Produces a dendogram that helps you viusaly decide how many clusters make sense 
+    * Can capture more complex relationships then K-Means 
