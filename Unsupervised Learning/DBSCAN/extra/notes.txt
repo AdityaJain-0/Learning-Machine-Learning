@@ -1,12 +1,12 @@
 Density-Based Spatial Clustering of Applications with Noise also known as DBSCAN discovers clusters of arbitrary shape based on density --> Automatically detects outliers
 
-eps (E): Maximum distance between two samples to be considered in the smae neighborhood 
+eps (E): Maximum distance between two samples to be considered in the same neighborhood 
 
-min_sample: Minimum number of samp-les required to form a dense region 
+min_sample: Minimum number of samples required to form a dense region 
 
 How it works:
 
-    Core pointL Has at least min_samples points within eps radius 
+    Core point has at least min_samples points within eps radius 
 
     Border point: Within eps of core point but not core point
 

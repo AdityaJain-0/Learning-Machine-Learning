@@ -1,22 +1,24 @@
-import numpy as np 
+# dbscan_example.py
+import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.datasets import make_blobs
-from sklearn.cluster import DBSCAN 
-from sklearn.preprocessing import StandardScaler
+from sklearn.datasets import make_moons
+from sklearn.cluster import DBSCAN
 
-X, y = make_blobs(n_samples=300, centers=3, cluster_std=0.5)
+# Generate 2D data with a moon shape
+X, _ = make_moons(n_samples=300, noise=0.05, random_state=42)
 
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
+# Fit DBSCAN
+dbscan = DBSCAN(eps=0.2, min_samples=5)
+labels = dbscan.fit_predict(X)
 
-db = DBSCAN(eps=0.3, min_samples=5)
-clusters = db.fit_predict(X_scaled)
-
-plt.figure(figsize=(8, 6))
-plt.scatter(X_scaled[:,0], X_scaled[:,1], c=clusters, cmap='viridis', s=50)
-plt.title("DBSCAN Clustering")
-plt.xlabel("Feature 1 (scaled)")
-plt.ylabel("Feature 2 (scaled)")
+# Plot
+plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='plasma')
+plt.title('DBSCAN Clustering')
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
 plt.grid(True)
-plt.colorbar(label="Cluster Label (-1 means noise)")
 plt.show()
+
+
+#eps=0.2 and min_samples=5 are hyperparameters to tune
+#Noise points are labeled as -1 by fit_predict
